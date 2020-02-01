@@ -2,20 +2,20 @@
  ------------------------------------------------------------------------------------------------
                                  BENNER
  ------------------------------------------------------------------------------------------------
- Projeto(s).......: AvaliaÁ„o - BENNER
+ Projeto(s).......: Avalia√ß√£o - BENNER
  Sistema(s).......: Microondas Digital
  Cliente(s).......: BENNER
  Requisitante(s)..: 
  Gestor(es).......: 
  Desenvolvedor(es): Sergio Jr
- DescriÁ„o........: FormMicroondas contendo as regras
+ Descri√ß√£o........: FormMicroondas contendo as regras
  Data.............: 29,30 e 31/01/2020
- ParametrÙ(s).....: N/A
+ Parametr√¥(s).....: N/A
  -------------------------------------------------------------------------------------------------
- ManutenÁ„o.......:
+ Manuten√ß√£o.......:
  Requisitante(s)..: 
  Desenvolvedor(es): 
- DescriÁ„o........: 
+ Descri√ß√£o........: 
  Data.............: 
 */
 using System;
@@ -76,7 +76,7 @@ namespace Microondas
         #endregion
 
         #region Eventos
-        // AÁıes r·pidas
+        // A√ß√µes r√°pidas
         private void btnFrango_Click(object sender, EventArgs e)
         {
             try
@@ -100,7 +100,7 @@ namespace Microondas
                 }
                 else
                 {
-                    MessageBox.Show("Alimento incompatÌvel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Alimento incompat√≠vel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -132,7 +132,7 @@ namespace Microondas
                 }
                 else
                 {
-                    MessageBox.Show("Alimento incompatÌvel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Alimento incompat√≠vel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -164,7 +164,7 @@ namespace Microondas
                 }
                 else
                 {
-                    MessageBox.Show("Alimento incompatÌvel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Alimento incompat√≠vel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -196,7 +196,7 @@ namespace Microondas
                 }
                 else
                 {
-                    MessageBox.Show("Alimento incompatÌvel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Alimento incompat√≠vel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -228,7 +228,7 @@ namespace Microondas
                     }
                     else
                     {
-                        MessageBox.Show("Alimento incompatÌvel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Alimento incompat√≠vel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception ex)
@@ -280,7 +280,7 @@ namespace Microondas
                         if (string.IsNullOrWhiteSpace(tempo[0]) && string.IsNullOrWhiteSpace(tempo[1]))
                             strMsg += "Informe o Tempo!\n";
                         if (string.IsNullOrWhiteSpace(cbbPotenciaPrograma.SelectedItem.ToString()))
-                            strMsg += "Informe a potÍncia!";
+                            strMsg += "Informe a pot√™ncia!";
                         if (string.IsNullOrEmpty(strMsg))
                         {                            
                             lblPotLeng.Visible = true;
@@ -302,7 +302,7 @@ namespace Microondas
                         }
                         else
                         {
-                            MessageBox.Show("Alimento incompatÌvel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
+                            MessageBox.Show("Alimento incompat√≠vel com o programa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
                         }
                     }
                     
@@ -338,11 +338,11 @@ namespace Microondas
                 if (string.IsNullOrWhiteSpace(ttbNome.Text))
                     strMsg += "Informe o Nome!\n";
                 if (string.IsNullOrWhiteSpace(ttbInstrucao.Text))
-                    strMsg += "Informe as InstruÁıes!\n";
+                    strMsg += "Informe as Instru√ß√µes!\n";
                 if (string.IsNullOrWhiteSpace(tempo[0]) && string.IsNullOrWhiteSpace(tempo[1]))
                     strMsg += "Informe o Tempo!\n";
                 if (string.IsNullOrWhiteSpace(cbbPotenciaCadastro.SelectedItem.ToString()))
-                    strMsg += "Informe a PotÍncia!\n";
+                    strMsg += "Informe a Pot√™ncia!\n";
                 if (string.IsNullOrWhiteSpace(ttbCaracterCadastro.Text) && ttbCaracterCadastro.Text.Length != 1)
                     strMsg += "Informe o Caracter!\n";
 
@@ -408,6 +408,8 @@ namespace Microondas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            trdValida.Abort();
+            
             lblTimer.Text = "00:00";
             lblPotLeng.Text = string.Empty;
             ttbInfAquecimento.Text = string.Empty;
@@ -490,7 +492,7 @@ namespace Microondas
                 ttbInfAquecimento.Text += charAtual;
         }
 
-        // Lista de programas prÈ-definidos
+        // Lista de programas pr√©-definidos
         public void listaDados()
         {
             listPrograma.Add(new Programa("", "", 0, 10, '#'));
@@ -548,7 +550,7 @@ namespace Microondas
             }
             else
             {
-                MessageBox.Show("Tempo inv·lido!", "Microondas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Tempo inv√°lido!", "Microondas", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 btnCancelar.PerformClick();
             }
         }
@@ -560,7 +562,7 @@ namespace Microondas
                 // verifica se todos os campos do tempo foram preenchidos
                 if (texto.Length > 5)
                     return -1;
-                // verifica se est· no formato de hora
+                // verifica se est√° no formato de hora
                 if (!texto.Contains(":"))
                     return -2;
 
@@ -582,13 +584,13 @@ namespace Microondas
         {
             if (seg < 1)
             {
-                MessageBox.Show("Tempo menor do que o mÌnimo(1 segundo)!", "Microondas",
+                MessageBox.Show("Tempo menor do que o m√≠nimo(1 segundo)!", "Microondas",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if (seg > 120)
             {
-                MessageBox.Show("Tempo maior do que o m·ximo(2 minutos)!", "Microondas",
+                MessageBox.Show("Tempo maior do que o m√°ximo(2 minutos)!", "Microondas",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
